@@ -11,9 +11,9 @@ env:
 before_script:
     - echo $GITHUB_TOKEN
     - mkdir ~/.composer
-    - echo "{ \"config\": { \"github-oauth\": { \"github.com\": \"$GITHUB_TOKEN\" } } }" > ~/.composer/config.json
+    - "echo \"{ 'config': { 'github-oauth': { 'github.com': '$GITHUB_TOKEN' } } }\" > ~/.composer/config.json"
     - cat ~/.composer/config.json
-    #- wget http://getcomposer.org/composer.phar
-    #- php composer.phar install --dev
+    - wget http://getcomposer.org/composer.phar
+    - php composer.phar install --dev
 
 script: ./bin/atoum --test-all

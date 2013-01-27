@@ -6,13 +6,11 @@ php:
 
 env:
     global:
-        - secure: "I322wnsq/j+Ado4i002itjKeHM47c34BIjYAlS8ROt3qtJ7El9rxAZaRW2t7\n2XNbhJJSGar+epp0s+5aEhgZlsi81ymfq4J7kutXbCo3QCm0SONtpJgT9pjS\n7uoEDkZuXNsJuI18zKb1sWjOEWJRY5wvEqaLhVuUD+DWRw8GK/c="
+        - secure: "KCqUtDYHj1LbmbX3ayC/RFxGoVVd/md8TvTUb3V7H8qR+5+vOgoOLENAiQDO\nCjry3iXQvhaylQqhxEjTr4nFRzxS+nTHbGQkV+rfJGIL6oMhlAdzOodtTDxo\naM9WKaysuAIEM+K4w5myl7C9Ge29n4Slr5DOxKhitQIoCiAhtvc="
 
 before_script:
-    - echo $GITHUB_TOKEN
     - mkdir ~/.composer
     - "echo \"{ \\\"config\\\": { \\\"github-oauth\\\": { \\\"github.com\\\": \\\"$GITHUB_TOKEN\\\" } } }\" > ~/.composer/config.json"
-    - cat ~/.composer/config.json
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install --dev
 

@@ -4,7 +4,12 @@ php:
     - 5.3
     - 5.4
 
+env:
+    global:
+        - secure: "I322wnsq/j+Ado4i002itjKeHM47c34BIjYAlS8ROt3qtJ7El9rxAZaRW2t7\n2XNbhJJSGar+epp0s+5aEhgZlsi81ymfq4J7kutXbCo3QCm0SONtpJgT9pjS\n7uoEDkZuXNsJuI18zKb1sWjOEWJRY5wvEqaLhVuUD+DWRw8GK/c="
+
 before_script:
+    - echo $GITHUB_TOKEN
     - wget http://getcomposer.org/composer.phar
     - php composer.phar install --dev
 
